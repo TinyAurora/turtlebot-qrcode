@@ -1,8 +1,5 @@
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
-
 #include <std_msgs/String.h>
-
-
 /*
 
 void initializePose(double xPose, double yPose);
@@ -58,17 +55,6 @@ void poseMessageReceived(const std_msgs::String& msg) {
     //ros::spin();
 //}
 
-
-
-
-
-
-
-
-
-
-
-
 #include <ros/ros.h>
 
 class SubscribeAndPublish
@@ -96,9 +82,6 @@ public:
 
     pub_.publish(start_pos);
 }
-
-
-
 
   SubscribeAndPublish()
   {
