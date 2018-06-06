@@ -1,0 +1,23 @@
+https://github.com/ros-drivers/zbar_ros/tree/hydro-devel
+
+https://github.com/ros-drivers/zbar_ros/blob/hydro-devel/launch/example.launch
+
+
+http://learn.turtlebot.com/
+
+roslaunch turtlebot_bringup minimal.launch
+roslaunch turtlebot_navigation gmapping_demo.launch
+
+roslaunch turtlebot_rviz_launchers view_navigation.launch
+roslaunch turtlebot_teleop keyboard_teleop.launch
+
+roslaunch turtlebot_bringup minimal.launch
+roslaunch turtlebot_navigation amcl_demo.launch map_file:=/tmp/my_map.yaml
+
+roslaunch turtlebot_rviz_launchers view_navigation.launch --screen
+
+roslaunch openni_launch openni.launch
+
+rosrun image_view image_view image:=/camera/rgb/image_color
+
+rosrun map_server map_saver -f /tmp/my_map
