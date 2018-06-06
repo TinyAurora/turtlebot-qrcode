@@ -47,18 +47,11 @@
 //}
 
 
-
-
-
-
-
 // This program subscribes to turtle1/pose and shows its
 // messages on the screen.
 
 #include <ros/ros.h>
-
 #include <std_msgs/String.h>
-
 #include <geometry_msgs/Twist.h>
 #include <iomanip>   // for std::setprecision and std::fixed
 
@@ -96,10 +89,7 @@ int main(int argc, char **argv) {
     ros::spin();
 }   
 
-
-
-bool moveToGoal(double xGoal, double yGoal){
-
+bool moveToGoal(double xGoal, double yGoal) {
    //define a client for to send goal requests to the move_base server through a SimpleActionClient
    actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> ac("move_base", true);
 
@@ -115,7 +105,6 @@ bool moveToGoal(double xGoal, double yGoal){
    goal.target_pose.header.stamp = ros::Time::now();
 
    /* moving towards the goal*/
-
    goal.target_pose.pose.position.x =  xGoal;
    goal.target_pose.pose.position.y =  yGoal;
    goal.target_pose.pose.position.z =  0.0;
@@ -126,7 +115,6 @@ bool moveToGoal(double xGoal, double yGoal){
 
    ROS_INFO("Sending goal location ...");
    ac.sendGoal(goal);
-
    ac.waitForResult();
 
    if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED){
@@ -137,7 +125,6 @@ bool moveToGoal(double xGoal, double yGoal){
       ROS_INFO("The robot failed to reach the destination");
       return false;
    }
-
 }
 
 
